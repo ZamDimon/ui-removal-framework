@@ -1,5 +1,5 @@
 //! This module provides system for state of the simulation scene when
-//! user setting up the rocket angle and/or position.
+//! [`SimulationState`] is active.
 
 use bevy::prelude::*;
 

@@ -17,14 +17,14 @@ pub struct MainCameraBundle {
     pub flycam: FlyCam,
 }
 
+pub(super) const BLOOM_INTENSITY: f32 = 0.25;
+pub(super) const FOG_COLOR: Color = Color::rgba(0.05, 0.05, 0.05, 1.0);
+pub(super) const FOG_FALLOFF_RANGE: (f32, f32) = (-10.0, 10000.0);
+
 impl MainCameraBundle {
     /// Based on the skyboxes's diffuse+specular maps, and the pinned entity,
     /// creates a new bundle for the orbit camera.
     pub fn new(diffuse_map: &Handle<Image>, specular_map: &Handle<Image>) -> Self {
-        const BLOOM_INTENSITY: f32 = 0.25;
-        const FOG_COLOR: Color = Color::rgba(0.05, 0.05, 0.05, 1.0);
-        const FOG_FALLOFF_RANGE: (f32, f32) = (-10.0, 3000.0);
-
         Self {
             camera_3d_bundle: Camera3dBundle {
                 camera: Camera {
@@ -51,7 +51,7 @@ impl MainCameraBundle {
                 intensity: BLOOM_INTENSITY,
                 ..Default::default()
             },
-            flycam: FlyCam
+            flycam: FlyCam,
         }
     }
 }
