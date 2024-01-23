@@ -1,0 +1,6 @@
+path: ./data
+train: ./data/train
+val: ./data/val
+
+nc: 1
+names: ['ui']
